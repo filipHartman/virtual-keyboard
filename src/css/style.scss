@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+body {
+  background-color: gray;
+  padding-left: 10rem;
+}
+
+.pressed {
+  background-color: green;
+}
+
+.keyboard-row {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.key {
+  display: inline-block;
+  padding: 1rem;
+  width: fit-content;
+}
