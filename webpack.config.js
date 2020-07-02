@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -7,6 +8,12 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Virtual Keyboard',
+      template: './src/index.html',
+    }),
+  ],
   module: {
     rules: [
       {

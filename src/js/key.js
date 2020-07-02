@@ -18,19 +18,29 @@ export function VirtualKeyBuilder() {
       return this;
     },
 
+    setClass: function (klass) {
+      this.klass = klass;
+      return this;
+    },
+
     build: function () {
-      return new VirtualKey(this.code, this.displayValue, this.alternativeCode);
+      return new VirtualKey(
+        this.code,
+        this.displayValue,
+        this.alternativeCode,
+        this.klass,
+      );
     },
   };
 }
 
 class VirtualKey extends HTMLButtonElement {
-  constructor(code, displayValue = '', alternativeCode = '') {
+  constructor(code, displayValue = '', alternativeCode = '', klass = '') {
     super();
     this.code = code;
     this.displayValue = displayValue;
     this.alternativeCode = alternativeCode;
-    this.className = 'key';
+    this.className = `key ${klass}`;
     this.fillWithSymbol();
   }
 

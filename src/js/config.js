@@ -2,7 +2,7 @@ import { VirtualKeyBuilder } from './key.js';
 
 export const textAreaConfig = {
   rows: 10,
-  cols: 90,
+  cols: 120,
 };
 
 export const modifyingKeys = [
@@ -26,7 +26,11 @@ export const modifyingKeys = [
 
 export const englishKeyboardFactory = {
   firstRow: [
-    VirtualKeyBuilder().setCode('`').setAlternativeCode('~').build(),
+    VirtualKeyBuilder()
+      .setCode('`')
+      .setAlternativeCode('~')
+      .setClass('special-key')
+      .build(),
     VirtualKeyBuilder().setCode('1').setAlternativeCode('!').build(),
     VirtualKeyBuilder().setCode('2').setAlternativeCode('@').build(),
     VirtualKeyBuilder().setCode('3').setAlternativeCode('#').build(),
@@ -39,10 +43,10 @@ export const englishKeyboardFactory = {
     VirtualKeyBuilder().setCode('0').setAlternativeCode(')').build(),
     VirtualKeyBuilder().setCode('-').setAlternativeCode('_').build(),
     VirtualKeyBuilder().setCode('=').setAlternativeCode('+').build(),
-    VirtualKeyBuilder().setCode('Backspace').build(),
+    VirtualKeyBuilder().setCode('Backspace').setClass('special-key').build(),
   ],
   secondRow: [
-    VirtualKeyBuilder().setCode('Tab').build(),
+    VirtualKeyBuilder().setCode('Tab').setClass('special-key').build(),
     VirtualKeyBuilder().setCode('q').setDisplayValue('Q').build(),
     VirtualKeyBuilder().setCode('w').setDisplayValue('W').build(),
     VirtualKeyBuilder().setCode('e').setDisplayValue('E').build(),
@@ -56,12 +60,17 @@ export const englishKeyboardFactory = {
     VirtualKeyBuilder().setCode('[').setAlternativeCode('{').build(),
     VirtualKeyBuilder().setCode(']').setAlternativeCode('}').build(),
     VirtualKeyBuilder().setCode('\\').setAlternativeCode('|').build(),
-    VirtualKeyBuilder().setCode('Delete').setDisplayValue('Del').build(),
+    VirtualKeyBuilder()
+      .setCode('Delete')
+      .setDisplayValue('Del')
+      .setClass('special-key')
+      .build(),
   ],
   thirdRow: [
     VirtualKeyBuilder()
       .setCode('CapsLock')
       .setDisplayValue('Caps Lock')
+      .setClass('special-key wide-key')
       .build(),
     VirtualKeyBuilder().setCode('a').setDisplayValue('A').build(),
     VirtualKeyBuilder().setCode('s').setDisplayValue('S').build(),
@@ -74,10 +83,17 @@ export const englishKeyboardFactory = {
     VirtualKeyBuilder().setCode('l').setDisplayValue('L').build(),
     VirtualKeyBuilder().setCode(';').build(),
     VirtualKeyBuilder().setCode("'").build(),
-    VirtualKeyBuilder().setCode('Enter').build(),
+    VirtualKeyBuilder()
+      .setCode('Enter')
+      .setClass('special-key wide-key')
+      .build(),
   ],
   fourthRow: [
-    VirtualKeyBuilder().setCode('ShiftLeft').setDisplayValue('Shift').build(),
+    VirtualKeyBuilder()
+      .setCode('ShiftLeft')
+      .setDisplayValue('Shift')
+      .setClass('special-key wide-key')
+      .build(),
     VirtualKeyBuilder().setCode('z').setDisplayValue('Z').build(),
     VirtualKeyBuilder().setCode('x').setDisplayValue('X').build(),
     VirtualKeyBuilder().setCode('c').setDisplayValue('C').build(),
@@ -88,18 +104,62 @@ export const englishKeyboardFactory = {
     VirtualKeyBuilder().setCode(',').setDisplayValue(',').build(),
     VirtualKeyBuilder().setCode('.').setDisplayValue('.').build(),
     VirtualKeyBuilder().setCode('/').setDisplayValue('/').build(),
-    VirtualKeyBuilder().setCode('ArrowUp').setDisplayValue('↑').build(),
-    VirtualKeyBuilder().setCode('ShiftRight').setDisplayValue('Shift').build(),
+    VirtualKeyBuilder()
+      .setCode('ArrowUp')
+      .setDisplayValue('↑')
+      .setClass('special-key narrow-key')
+      .build(),
+    VirtualKeyBuilder()
+      .setCode('ShiftRight')
+      .setDisplayValue('Shift')
+      .setClass('special-key narrow-key')
+      .build(),
   ],
   fifthRow: [
-    VirtualKeyBuilder().setCode('ControlLeft').setDisplayValue('Ctrl').build(),
-    VirtualKeyBuilder().setCode('OS').setDisplayValue('Win').build(),
-    VirtualKeyBuilder().setCode('AltLeft').setDisplayValue('Alt').build(),
-    VirtualKeyBuilder().setCode('Space').setDisplayValue(' ').build(),
-    VirtualKeyBuilder().setCode('AltRight').setDisplayValue('Alt').build(),
-    VirtualKeyBuilder().setCode('ControlRight').setDisplayValue('Ctrl').build(),
-    VirtualKeyBuilder().setCode('ArrowLeft').setDisplayValue('←').build(),
-    VirtualKeyBuilder().setCode('ArrowDown').setDisplayValue('↓').build(),
-    VirtualKeyBuilder().setCode('ArrowRight').setDisplayValue('→').build(),
+    VirtualKeyBuilder()
+      .setCode('ControlLeft')
+      .setDisplayValue('Ctrl')
+      .setClass('special-key')
+      .build(),
+    VirtualKeyBuilder()
+      .setCode('OS')
+      .setDisplayValue('Win')
+      .setClass('special-key')
+      .build(),
+    VirtualKeyBuilder()
+      .setCode('AltLeft')
+      .setDisplayValue('Alt')
+      .setClass('special-key')
+      .build(),
+    VirtualKeyBuilder()
+      .setCode('Space')
+      .setDisplayValue(' ')
+      .setClass('space')
+      .build(),
+    VirtualKeyBuilder()
+      .setCode('AltRight')
+      .setDisplayValue('Alt')
+      .setClass('special-key')
+      .build(),
+    VirtualKeyBuilder()
+      .setCode('ControlRight')
+      .setDisplayValue('Ctrl')
+      .setClass('special-key')
+      .build(),
+    VirtualKeyBuilder()
+      .setCode('ArrowLeft')
+      .setDisplayValue('←')
+      .setClass('special-key narrow-key')
+      .build(),
+    VirtualKeyBuilder()
+      .setCode('ArrowDown')
+      .setDisplayValue('↓')
+      .setClass('special-key narrow-key')
+      .build(),
+    VirtualKeyBuilder()
+      .setCode('ArrowRight')
+      .setDisplayValue('→')
+      .setClass('special-key narrow-key')
+      .build(),
   ],
 };
